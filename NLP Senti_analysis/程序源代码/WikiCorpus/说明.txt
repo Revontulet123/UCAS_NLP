@@ -1,0 +1,13 @@
+维基百科词向量表的构建
+wiki官网下载中文语料：https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
+
+process.py:将XML文件转换为text格式，wiki.zh.txt
+
+安装opencc进行繁简转换：https://bintray.com/package/files/byvoid/opencc/OpenCC
+进入解压后的opencc的目录（opencc-1.0.1-win64），双击opencc.exe文件，在当前目录打开cmd，输入 opencc -i wiki.zh.txt -o wiki.zh.simp.txt -c t2s.json，得到简体中文语料
+
+particle.py:利用结巴分词对语料进行分词，得到文档wiki.zh.simp.seg.txt
+
+train_word2vec.py:利用gensim模块对语料进行词向量训练，得到词向量表wiki.zh.text.vector
+
+#最终的词向量表为3.56G，过大不好上传，因此后续微博语料预处理程序都不能直接在其他机器上编译。全部微博语料已处理好的结果在数据文件夹中data.csv。

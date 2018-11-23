@@ -1,0 +1,3 @@
+Preprocess.py为集成的预处理脚本，输入为微博文本（weibo.txt，在同目录下），输出为文本词向量（weibo.csv）
+
+user.py为客户使用脚本，输入为文本词向量（weibo.csv，在同目录下），输出为三种模型各自的预测结果（SVM_PRED.csv、BP_PRED.csv、RandomForest_PRED.csv）
